@@ -1,5 +1,7 @@
 package windows;
 
+import java.awt.Container;
+
 import javax.swing.JFrame;
 
 import listener.KeyboardListener;
@@ -16,9 +18,14 @@ public class MainWindow implements Window {
 		frame.setLocationRelativeTo(null);
 		frame.setResizable(false);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		frame.setVisible(true);
-		
 		frame.addKeyListener(new KeyboardListener());
+		
+		Container cp = frame.getContentPane();
+		cp.setLayout(null);
+		
+		
+		
+		frame.setVisible(true);
 	}
 
 	@Override
