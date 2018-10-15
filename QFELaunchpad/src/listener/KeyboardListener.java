@@ -9,8 +9,9 @@ public class KeyboardListener implements KeyListener {
 
 	@Override
 	public void keyPressed(KeyEvent e) {
-		if(e.getSource() == MainWindow.getFrame())
+		if (e.getSource() == MainWindow.getFrame()) {
 			System.out.println(e.getKeyCode());
+		}
 	}
 
 	@Override
