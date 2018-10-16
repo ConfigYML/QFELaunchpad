@@ -11,10 +11,11 @@ public class KeyboardListener implements KeyListener {
 	@Override
 	public void keyPressed(KeyEvent e) {
 		if (e.getSource() == MainWindow.getFrame()) {
-			System.out.println(e.getKeyCode());
 			if(e.getKeyCode() >= 48 && e.getKeyCode() <= 57) {
 				String keyCode = String.valueOf(e.getKeyChar());
 				Main.getBinding().setLayer(Integer.valueOf(keyCode));
+			} else if(e.getKeyCode() >= 96 && e.getKeyCode() <= 105) {
+				Main.getMusicManager().playMusic(Main.getBinding().getFileByKey(e.getKeyCode()));
 			}
 		}
 	}
