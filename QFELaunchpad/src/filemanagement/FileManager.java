@@ -15,7 +15,7 @@ public class FileManager {
 	}
 
 	public void createFolder() {
-		for (int i = 0; i < 9; i++) {
+		for (int i = 0; i < 10; i++) {
 			File f = new File(dataDir.getPath() + "/Layer" + i);
 			f.mkdir();
 		}
@@ -23,7 +23,7 @@ public class FileManager {
 
 	public void repairFolder() {
 		ArrayList<Integer> layersMissing = new ArrayList<>();
-		for (int i = 0; i < 9; i++) {
+		for (int i = 0; i < 10; i++) {
 			File f = new File(dataDir.getPath() + "/Layer" + i);
 			if (!f.exists()) {
 				layersMissing.add(i);
@@ -33,5 +33,9 @@ public class FileManager {
 			File f = new File(dataDir.getPath() + "/Layer" + i);
 			f.mkdir();
 		}
+	}
+
+	public File getDataDir() {
+		return dataDir;
 	}
 }
